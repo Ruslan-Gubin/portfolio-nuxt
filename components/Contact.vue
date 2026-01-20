@@ -1,8 +1,10 @@
-<script setup>
-import TelegramSvg from '../components/svg/TelegramSvg.vue';
-import GithubSvg from '../components/svg/GithubSvg.vue';
-import LinkedinSvg from '../components/svg/LinkedinSvg.vue';
-import EmailSvg from '../components/svg/EmailSvg.vue';
+<script setup lang="ts">
+import ContactForm from './ContactForm'
+import TelegramSvg from '../components/svg/TelegramSvg';
+import GithubSvg from '../components/svg/GithubSvg';
+import LinkedinSvg from '../components/svg/LinkedinSvg';
+import EmailSvg from '../components/svg/EmailSvg';
+
 
 </script>
 <template>
@@ -41,23 +43,7 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
           </li>
         </ul>
       </aside>
-
-      <aside class='aside'>
-        <h1 class='titleForm'>Напишите письмо</h1>
-        <label class='label'>
-          Имя
-          <input class='input' type='text' name='name' />
-        </label>
-        <label class='label'>
-          Почта
-          <input class='input' type='email' name='email' />
-        </label>
-        <label class='label'>
-          Сообщение
-          <textarea class='textarea' name='message' />
-        </label>
-        <button class='button'>Отправить</button>
-      </aside>
+      <ContactForm />
     </section>
   </section>
 </template>
@@ -72,6 +58,14 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
 .target {
   position: relative;
   top: -175px;
+
+  @media (max-width: 880px) {
+    top: -140px;
+  }
+
+  @media (max-width: 500px) {
+    top: -125px;
+  }
 }
 
 .wrapper {
@@ -89,7 +83,6 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
 
 .aside {
   width: 50%;
-  height: 500px;
   display: flex;
   flex-direction: column;
   row-gap: var(--padding-content-block);
@@ -100,6 +93,7 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
     max-width: 680px;
   }
 }
+
 
 .contactList {
   display: grid;
@@ -144,61 +138,5 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
   @media (max-width: 500px) {
     max-width: 100%;
   }
-}
-
-.titleForm {
-  font-weight: 300;
-
-  @media (max-width: 1024px) {
-    font-size: 36px;
-  }
-}
-
-.label {
-  font-weight: 300;
-  display: flex;
-  flex-direction: column;
-  row-gap: 4px;
-  font-size: 20px;
-
-  @media (max-width: 500px) {
-    font-size: 18px;
-  }
-}
-
-.input {
-  padding: 12px 16px;
-  font-weight: 300;
-  border-radius: 8px;
-  border: 1px solid #949494;
-  font-size: 18px;
-
-  &:focus {
-    border-color: #015fcc;
-  }
-}
-
-.textarea {
-  padding: 12px 16px;
-  font-size: 18px;
-  min-height: 110px;
-  border: 1px solid #949494;
-  border-radius: 8px;
-  font-weight: 300;
-
-  &:focus {
-    border-color: #015fcc;
-  }
-}
-
-.button {
-  background-color: black;
-  padding-inline: 27px;
-  height: 47px;
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 8px;
-  max-width: max-content;
 }
 </style>

@@ -5,9 +5,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Приватные ключи, доступные только на сервере
     apiSecret: "123",
-    // Ключи внутри public также доступны и на клиенте
+
     public: {
-      apiBase: "/api",
+      EMAIL_SERVICE_ID: process.env.EMAIL_SERVICE_ID,
+      EMAIL_TEMPLATE_ID: process.env.EMAIL_TEMPLATE_ID,
+      EMAIL_PUBLIC_KEY: process.env.EMAIL_PUBLIC_KEY,
     },
   },
   routeRules: {

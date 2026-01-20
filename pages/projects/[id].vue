@@ -1,8 +1,10 @@
 <script setup lang="ts">
+
 definePageMeta({
   layout: 'default',
   title: 'Hello World',
 })
+
 const route = useRoute();
 const id = route.params.id;
 
@@ -10,14 +12,32 @@ const id = route.params.id;
 
 <template>
   <div class='root'>
-    <NuxtLink to="/">Go home</NuxtLink>
-    <h1 class='title'>Project {{ id }}</h1>
+    <section class='mainSection'>
+      <img class='image' src='/image/Macbook-Air-giftoboom.front.wtsdemo.ru.webp' alt='project image' />
+    </section>
+    <h1 class='title'>Описание {{ id }}</h1>
   </div>
 </template>
 
 <style lang="css" scoped>
+.mainSection {
+  height: calc(100vh - var(--header-size-height));
+}
+
+.image {
+  width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.goBack {
+  color: black;
+  cursor: pointer;
+}
+
 .root {
-  background-color: greenyellow;
+  border: 1px solid black;
 }
 
 .title {

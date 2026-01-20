@@ -6,7 +6,7 @@ const projectsList = [
   { id: 1, name: 'Cezyo', description: 'B2B/B2C платформа для управления продажами и логистикой, включающая функционал для поставщиков производителей и клиентов. Реализовал работу с заказами, логистикой, интеграцию со сторонними службами доставки, а также административную панель.', image: '/image/Macbook-Air-dev.cezyo.com.webp', technologies: ["React", "SCSS", "Node js", "P2"] },
   { id: 2, name: "Giftoboom", image: '/image/Macbook-Air-giftoboom.front.wtsdemo.ru.webp', description: 'приложение для генерации инструкций по созданию картин из изображений, с графической обработкой и голосовыми подсказками.', technologies: ["React", "SCSS", "Node js", "P2"] },
   { id: 3, name: "Feejoy", image: '/image/Macbook-Air-en.feejoy.com.webp', description: 'сайт для управления системными решениями в области измерительных приборов, включая административную панель.', technologies: ["React", "SCSS", "Node js", "P2"] },
-  { id: 4, name: "AG Clinic:", image: '/image/Macbook-Air-agclinic.ru.webp', description: 'комплексное решение для сети клиник, включающее управление расписанием, бронированием и отзывами.', technologies: ["React", "SCSS", "Node js", "P2"] },
+  { id: 4, name: "AG Clinic", image: '/image/Macbook-Air-agclinic.ru.webp', description: 'комплексное решение для сети клиник, включающее управление расписанием, бронированием и отзывами.', technologies: ["React", "SCSS", "Node js", "P2"] },
   { id: 5, name: "Касперский", image: '/image/Macbook-Air-cybersecurity-ai.datalesson.ru.webp', description: 'Интерактивный тренажер для «Урока цифры» по теме Касперский кибербезопасность.', technologies: ["React", "SCSS", "Node js", "P2"] },
   { id: 5, name: "Яндекс такси", image: '/image/Macbook-Air-kod-goroda.datalesson.ru.webp', description: 'Интерактивный тренажер для «Урока цифры» по теме такси.', technologies: ["React", "SCSS", "Node js", "P2"] },
   { id: 6, name: "Andaman", image: '/image/Macbook-Air-andaman.city.webp', description: 'Комплекс апартаментов и резиденций с курортной инфраструктурой под управлением отельной сети Radisson', technologies: ["Next js", "SCSS", "Strapi"] },
@@ -19,11 +19,20 @@ const projectsList = [
     <div class='target' id='target-projects'></div>
 
     <section class='content'>
-      <h1 class='title'>Проекты</h1>
+      <header class='header'>
+        <h1 class='title'>Проекты</h1>
+        <h2 class='subtitle'>
+          В этом разделе представлен список ключевых проектов, реализованных с использованием современных технологий и
+          решений для разработки, интеграции и поддержки системы.
+        </h2>
+      </header>
+
       <ul class='projects'>
         <li v-for='project in projectsList' :key="project.id" class='projectItem'>
           <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }">
-            <img class='projectImg' :src="project.image" alt='project image' />
+            <div class='picture'>
+              <img class='projectImg' :src="project.image" alt='project image' />
+            </div>
             <div class='itemContent'>
               <div class='itemContentHeader'>
                 <h3 class='itemContentTitle'>{{ project.name }}</h3>
@@ -50,20 +59,50 @@ const projectsList = [
   position: relative;
   padding-inline: var(--padding-main);
   padding-block: var(--padding-bottom-home-block);
+  border-bottom: 1px solid #eef0f6;
 }
 
 .target {
   position: absolute;
   top: -80px;
+
+  @media (max-width: 880px) {
+    top: -60px;
+  }
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  row-gap: var(--padding-main);
   max-width: var(--content-max-width);
   margin: 0 auto;
+  row-gap: 48px;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.subtitle {
+  color: #757575;
+  font-weight: 400;
+  font-size: 18px;
+  max-width: 770px;
+  line-height: 28px;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    line-height: 2rem;
+  }
+}
+
 
 .projects {
   display: grid;
@@ -87,12 +126,24 @@ const projectsList = [
   box-shadow: 0px 4px 8px -2px #0000000A;
   box-shadow: 0px 2px 4px -2px #00000014;
   background: white;
+  transition: box-shadow 0.2s linear;
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  &:hover {
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  }
 }
 
+.picture {
+  overflow: hidden;
+}
 
 .projectImg {
+  max-width: 100%;
   object-fit: cover;
 }
+
 
 .itemContent {
   padding: 32px;

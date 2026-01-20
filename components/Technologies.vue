@@ -1,46 +1,72 @@
-<script setup lang="ts">
-import Clip from './Clip.vue';
-
-const frontendList = ['TypeScript', 'React', 'Next', 'Vue', 'React Native', 'SASS', 'Mui', 'Redux', 'MobX', 'Apollo', 'Zustand', 'Pinia', 'Web Components', 'Framer Motion', 'Canvas', 'ThreeJS'];
-const backendList = ['Node js', 'Nest', 'Express', 'Golang', 'PostgreSQL', 'MySQL', 'MongoDb', 'Prisma', 'Rest', 'GraphQl', 'RabbitMq', 'Docker', 'Websocket'];
-const otherList = ['Webpack', 'Vite', 'Jest', 'Vitest', 'Storybook', 'i18n', 'seo', 'pwa', 'module federation', 'OpenLayers'];
-
-</script>
-
 <template>
   <div class='root'>
     <section class='wrapper'>
       <div class='target' id='target-technologies'></div>
 
       <section class='technologies'>
-        <h1>Технологии</h1>
+        <header class='header'>
+          <h1 class='title'>Технологии</h1>
+          <h2 class='subtitle'>
+            Этот раздел описывает ключевые технологии и инструменты, используемые в проектах — от языков
+            программирования
+            и фреймворков до систем тестирования, сборки и управления данными. В списке представлены проверенные и
+            современные решения для создания надежных, масштабируемых продуктов — от интерфейсов и API до баз данных и
+            систем обмена сообщениями.
+          </h2>
+        </header>
         <ul class='technologiesList'>
-          <div class='firstLine'>
-            <li class='technologiesListItem'>
-              <h2>Фронтенд</h2>
-              <ul class='technologiesListItemText'>
-                <li v-for="item in frontendList" :key="item">
-                  <Clip>{{ item }}</Clip>
-                </li>
-              </ul>
-            </li>
 
-            <li class='technologiesListItem'>
-              <h2>Бэкенд</h2>
-              <ul class='technologiesListItemText'>
-                <li v-for="item in backendList" :key="item">
-                  <Clip>{{ item }}</Clip>
-                </li>
-              </ul>
-            </li>
-          </div>
-          <li class='technologiesListItem technologiesListItemOther'>
-            <h2>Дополнительно</h2>
-            <ul class='technologiesListItemText'>
-              <li v-for="item in otherList" :key="item">
-                <Clip>{{ item }}</Clip>
-              </li>
-            </ul>
+          <li class='technologiesItem'>
+            <b>Языки программирования</b>
+            <p>JavaScript / TypeScript.</p>
+          </li>
+          <li class='technologiesItem'>
+            <b>Фронтенд</b>
+            <p>React / Next / React Native / Vue / Nuxt / Web Components.</p>
+          </li>
+          <li class='technologiesItem'>
+            <b>API</b>
+            <p>REST / GraphQL / WebSocket / Zod.</p>
+          </li>
+
+          <li class='technologiesItem'>
+            <b>Управления состоянием</b>
+            <p>Redux / Toolkit / RTK Query / MobX / Zustand / Pinia / Apollo / SWR / TanStack / Query.</p>
+          </li>
+          <li class='technologiesItem'>
+            <b>Стили</b>
+            <p>CSS / SASS / CSS Modules / Styled-components.</p>
+          </li>
+          <li class='technologiesItem'>
+            <b>Анимации</b>
+            <p>GSAP / Framer Motion / Canvas / PixiJS / ThreeJS / P5.js.</p>
+          </li>
+          <li class='technologiesItem'><b>UI-библиотеки</b>
+            <p>Material-UI.</p>
+          </li>
+          <li class='technologiesItem'><b>Карты</b>
+            <p>OpenLayers / Mapbox.</p>
+          </li>
+          <li class='technologiesItem'><b>Тестирование</b>
+            <p>Jest / Vitest / React Testing Library.</p>
+          </li>
+          <li class='technologiesItem'><b>Сборка и инструменты</b>
+            <p>Webpack / Vite / ESLint / Prettier / Storybook / i18n / Module Federation / SEO / PWA / Docker.</p>
+          </li>
+          <li class='technologiesItem'><b>Бэкенд</b>
+            <p>Node / Nest / Express / Go.</p>
+          </li>
+          <li class='technologiesItem'><b>СУБД</b>
+            <p>PostgreSQL / MySQL / MongoDb.</p>
+          </li>
+          <li class='technologiesItem'><b>Брокеры сообщений</b>
+            <p>RabbitMq / Kafka.</p>
+          </li>
+          <li class='technologiesItem'><b>ORM</b>
+            <p>Prisma.</p>
+          </li>
+          <li class='technologiesItem'><b>Git</b>
+            <p>GitLab / Bitbucket / Gogs / GitFlic.</p>
           </li>
         </ul>
       </section>
@@ -53,6 +79,7 @@ const otherList = ['Webpack', 'Vite', 'Jest', 'Vitest', 'Storybook', 'i18n', 'se
 .root {
   padding-block: var(--padding-bottom-home-block);
   padding-inline: var(--padding-main);
+  border-bottom: 1px solid #eef0f6;
 }
 
 .wrapper {
@@ -67,20 +94,87 @@ const otherList = ['Webpack', 'Vite', 'Jest', 'Vitest', 'Storybook', 'i18n', 'se
 .target {
   position: absolute;
   top: -175px;
+
+  @media (max-width: 880px) {
+    top: -140px;
+  }
+
+  @media (max-width: 500px) {
+    top: -125px;
+  }
 }
 
 .technologies {
-  width: fit-content;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: var(--padding-content-block);
+  row-gap: 48px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.subtitle {
+  color: #757575;
+  font-weight: 400;
+  font-size: 18px;
+  max-width: 770px;
+  line-height: 28px;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+    line-height: 2rem;
+  }
+}
+
+.technologiesItem {
+  padding-block: 28px;
+  padding-block: 16px;
+  border-bottom: 1px solid #eef0f6;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+
+  font-size: 18px;
+  column-gap: 10px;
+
+  & b {
+    font-size: 18px;
+  }
+
+  & p {
+    font-weight: 300;
+  }
+
+  &:first-child {
+    border-top: 1px solid #eef0f6;
+  }
+
+  @media (max-width: 880px) {
+
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+
+  }
 }
 
 .technologiesList {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--padding-content-block);
   min-width: 100%;
 }
 
@@ -92,23 +186,9 @@ const otherList = ['Webpack', 'Vite', 'Jest', 'Vitest', 'Storybook', 'i18n', 'se
 
 }
 
-.firstLine {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--padding-content-block);
 
-  @media (max-width: 880px) {
-    flex-direction: column;
-  }
-}
-
-.technologiesListItemOther {
-  min-width: 100%;
-  width: 100%;
-}
 
 .technologiesListItemText {
-  color: #6e738b;
   display: flex;
   gap: 4px;
   flex-wrap: wrap;

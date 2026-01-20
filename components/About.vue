@@ -51,16 +51,21 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
 .target {
   position: relative;
   top: -115px;
+
+  @media (max-width: 880px) {
+    top: -65px;
+  }
 }
 
 .wrapper {
   position: relative;
   padding-inline: var(--padding-main);
+  border-bottom: 1px solid #eef0f6;
+
 }
 
 .about {
-  height: calc(100vh - 80px);
-  min-height: max-content;
+  min-height: calc(100vh - var(--header-size-height));
   display: flex;
   flex-direction: column;
   row-gap: var(--padding-content-block);
@@ -68,20 +73,12 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
   margin: 0 auto;
   justify-content: center;
   position: relative;
-
-  @media (max-width: 880px) {
-    height: calc(100vh - 180px);
-  }
-
-  @media (max-width: 500px) {
-    height: calc(100vh - 160px);
-  }
+  padding-block: var(--padding-bottom-home-block);
 }
 
 
 .subTitle {
   color: #757575;
-  line-height: 40px;
   line-height: 2.4rem;
   max-width: 770px;
   font-weight: 300;

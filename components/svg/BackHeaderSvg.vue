@@ -1,0 +1,7 @@
+<template>
+  <svg fill="white" width="40px" height="40px" viewBox="-8.5 0 32 32" version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <title>back</title>
+    <path d="M15.281 7.188v17.594l-15.281-8.781z"></path>
+  </svg>
+</template>

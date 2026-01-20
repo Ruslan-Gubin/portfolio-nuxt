@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
   <main class='wrapper'>
     <Header />
     <div class='content'>
-
       <slot />
     </div>
     <Footer />
