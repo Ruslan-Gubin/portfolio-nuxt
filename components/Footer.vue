@@ -25,7 +25,7 @@
         </li>
       </ul>
     </nav>
-    <p class='copyright'>Ruslan Gubin ©2026</p>
+    <p class='copyright'>Ruslan Gubin &copy2026</p>
   </footer>
 </template>
 
@@ -46,12 +46,11 @@
   column-gap: var(--padding-content-block);
   font-size: 18px;
   font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-inline: var(--padding-content-block);
+  row-gap: 12px;
 
-  @media (max-width: 500px) {
-    display: grid;
-    row-gap: 12px;
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .copyright {
