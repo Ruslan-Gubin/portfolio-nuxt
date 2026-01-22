@@ -18,7 +18,7 @@ import projects from '../data/projects.json';
       </header>
 
       <ul class='projects'>
-        <li v-for='project in projects' :key="project.id" class='projectItem'>
+        <li v-for='project in projects' :key="project.name" class='projectItem'>
           <NuxtLink :to="{ name: 'projects-name', params: { name: project.name } }">
             <div class='picture'>
               <img class='projectImg' :src="project.image" alt='project image' />

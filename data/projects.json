@@ -1,10 +1,9 @@
 [
   {
-    "id": 1,
     "title": "Cezyo",
     "name": "cezyo",
     "description": "B2B/B2C платформа для управления продажами и логистикой, включающая функционал для поставщиков производителей и клиентов. Реализовал работу с заказами, логистикой, интеграцию со сторонними службами доставки, а также административную панель.",
-    "image": "/image/Macbook-Air-dev.cezyo.com.webp",
+    "image": "/image/cezyo.webp",
     "technologies": [
       "React",
       "SCSS",
@@ -13,10 +12,9 @@
     ]
   },
   {
-    "id": 2,
     "title": "Giftoboom",
     "name": "giftoboom",
-    "image": "/image/Macbook-Air-giftoboom.front.wtsdemo.ru.webp",
+    "image": "/image/giftoboom.webp",
     "total_image": 8,
     "description": "приложение для генерации инструкций по созданию картин из изображений, с графической обработкой и голосовыми подсказками.",
     "full_description": "Приложение для генерации инструкций по созданию картин из нитей, с графической обработкой и голосовыми подсказками. Предлагает пользователям простой и интуитивно понятный процесс создания картины. Все, что нужно сделать, — это приобрести специальный круг с уникальным кодом и зайти на сайт https://giftoboom.shop/. После ввода кода пользователь получает доступ к функционалу приложения.",
@@ -42,10 +40,9 @@
     "link": "https://giftoboom.shop/"
   },
   {
-    "id": 3,
     "title": "Feejoy",
     "name": "feejoy",
-    "image": "/image/Macbook-Air-en.feejoy.com.webp",
+    "image": "/image/feejoy.webp",
     "description": "сайт для управления системными решениями в области измерительных приборов, включая административную панель.",
     "technologies": [
       "React",
@@ -55,10 +52,9 @@
     ]
   },
   {
-    "id": 4,
     "title": "AG Clinic",
     "name": "agclinic",
-    "image": "/image/Macbook-Air-agclinic.ru.webp",
+    "image": "/image/agclinic.webp",
     "description": "комплексное решение для сети клиник, включающее управление расписанием, бронированием и отзывами.",
     "technologies": [
       "React",
@@ -68,10 +64,9 @@
     ]
   },
   {
-    "id": 5,
     "title": "Касперский",
     "name": "kaspersky",
-    "image": "/image/Macbook-Air-cybersecurity-ai.datalesson.ru.webp",
+    "image": "/image/kaspersky.webp",
     "description": "Интерактивный тренажер для «Урока цифры» по теме Касперский кибербезопасность.",
     "technologies": [
       "React",
@@ -81,10 +76,9 @@
     ]
   },
   {
-    "id": 5,
     "title": "Яндекс такси",
     "name": "yandex-taxi",
-    "image": "/image/Macbook-Air-kod-goroda.datalesson.ru.webp",
+    "image": "/image/yandex-taxi.webp",
     "description": "Интерактивный тренажер для «Урока цифры» по теме такси.",
     "technologies": [
       "React",
@@ -94,10 +88,9 @@
     ]
   },
   {
-    "id": 6,
     "title": "Andaman",
     "name": "andaman",
-    "image": "/image/Macbook-Air-andaman.city.webp",
+    "image": "/image/andaman.webp",
     "description": "Комплекс апартаментов и резиденций с курортной инфраструктурой под управлением отельной сети Radisson",
     "technologies": [
       "Next js",
