@@ -29,7 +29,7 @@
     --padding-content-block: 20px;
     --padding-main: 20px;
     --padding-bottom-home-block: 80px;
-  --header-size-height: 62px;
+    --header-size-height: 62px;
   }
 }
 
@@ -67,7 +67,6 @@ aside {
 }
 
 body {
-  /* background-color: var(--background-body); */
   color: var(--text-color-main);
   font-family: "Roboto", sans-serif;
   font-style: normal;

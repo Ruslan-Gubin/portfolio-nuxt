@@ -1,16 +1,6 @@
 <script setup lang="ts">
-import Clip from './Clip.vue';
-
-
-const projectsList = [
-  { id: 1, name: 'Cezyo', description: 'B2B/B2C платформа для управления продажами и логистикой, включающая функционал для поставщиков производителей и клиентов. Реализовал работу с заказами, логистикой, интеграцию со сторонними службами доставки, а также административную панель.', image: '/image/Macbook-Air-dev.cezyo.com.webp', technologies: ["React", "SCSS", "Node js", "P2"] },
-  { id: 2, name: "Giftoboom", image: '/image/Macbook-Air-giftoboom.front.wtsdemo.ru.webp', description: 'приложение для генерации инструкций по созданию картин из изображений, с графической обработкой и голосовыми подсказками.', technologies: ["React", "SCSS", "Node js", "P2"] },
-  { id: 3, name: "Feejoy", image: '/image/Macbook-Air-en.feejoy.com.webp', description: 'сайт для управления системными решениями в области измерительных приборов, включая административную панель.', technologies: ["React", "SCSS", "Node js", "P2"] },
-  { id: 4, name: "AG Clinic", image: '/image/Macbook-Air-agclinic.ru.webp', description: 'комплексное решение для сети клиник, включающее управление расписанием, бронированием и отзывами.', technologies: ["React", "SCSS", "Node js", "P2"] },
-  { id: 5, name: "Касперский", image: '/image/Macbook-Air-cybersecurity-ai.datalesson.ru.webp', description: 'Интерактивный тренажер для «Урока цифры» по теме Касперский кибербезопасность.', technologies: ["React", "SCSS", "Node js", "P2"] },
-  { id: 5, name: "Яндекс такси", image: '/image/Macbook-Air-kod-goroda.datalesson.ru.webp', description: 'Интерактивный тренажер для «Урока цифры» по теме такси.', technologies: ["React", "SCSS", "Node js", "P2"] },
-  { id: 6, name: "Andaman", image: '/image/Macbook-Air-andaman.city.webp', description: 'Комплекс апартаментов и резиденций с курортной инфраструктурой под управлением отельной сети Radisson', technologies: ["Next js", "SCSS", "Strapi"] },
-];
+import Clip from './Clip';
+import projects from '../data/projects.json';
 
 </script>
 
@@ -28,14 +18,14 @@ const projectsList = [
       </header>
 
       <ul class='projects'>
-        <li v-for='project in projectsList' :key="project.id" class='projectItem'>
-          <NuxtLink :to="{ name: 'projects-id', params: { id: project.id } }">
+        <li v-for='project in projects' :key="project.id" class='projectItem'>
+          <NuxtLink :to="{ name: 'projects-name', params: { name: project.name } }">
             <div class='picture'>
               <img class='projectImg' :src="project.image" alt='project image' />
             </div>
             <div class='itemContent'>
               <div class='itemContentHeader'>
-                <h3 class='itemContentTitle'>{{ project.name }}</h3>
+                <h3 class='itemContentTitle'>{{ project.title }}</h3>
                 <div class='itemContentSubTitle'>{{ project.description }}</div>
               </div>
               <ul class='clipList'>

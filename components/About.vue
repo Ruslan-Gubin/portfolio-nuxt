@@ -3,6 +3,7 @@ import TelegramSvg from '../components/svg/TelegramSvg.vue';
 import GithubSvg from '../components/svg/GithubSvg.vue';
 import LinkedinSvg from '../components/svg/LinkedinSvg.vue';
 import EmailSvg from '../components/svg/EmailSvg.vue';
+import BackHeaderSvg from './svg/BackHeaderSvg'
 
 </script>
 <template>
@@ -10,7 +11,7 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
     <section class='wrapper'>
       <div class='target' id='target-about'></div>
       <section class='about'>
-        <h1>Привет! <br />Меня зовут Руслан.</h1>
+        <h1 class='title'>Привет! <br />Меня зовут Руслан.</h1>
         <h2 class='subTitle'>Я разработчик, специализирующийся на создании масштабируемых и эффективных веб-приложений,
           использующих
           современные технологии и инструменты для разработки. Мои опыт и навыки включают в себя создание клиентских
@@ -19,30 +20,35 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
 
       <nav class='contacts'>
         <ul class='contactsList'>
-          <li>
+          <li :style="{ 'animation-delay': '0.2s' }">
             <NuxtLink to="https://t.me/RuslanGubin" target='_blank'>
               <TelegramSvg />
             </NuxtLink>
           </li>
-          <li>
+          <li :style="{ 'animation-delay': '0.3s' }">
             <NuxtLink to="https://github.com/Ruslan-Gubin" target='_blank'>
               <GithubSvg />
             </NuxtLink>
           </li>
-          <li>
+          <li :style="{ 'animation-delay': '0.4s' }">
             <NuxtLink
               to="https://www.linkedin.com/in/%D1%80%D1%83%D1%81%D0%BB%D0%B0%D0%BD-%D0%B3%D1%83%D0%B1%D0%B8%D0%BD-b71b3193/"
               target='_blank'>
               <LinkedinSvg />
             </NuxtLink>
           </li>
-          <li>
+          <li :style="{ 'animation-delay': '0.5s' }">
             <NuxtLink to="mailto:gubin_ruslan@rambler.ru">
               <EmailSvg />
             </NuxtLink>
           </li>
         </ul>
       </nav>
+      <NuxtLink to="/#target-projects">
+        <button class='buttonScroll'>
+          <BackHeaderSvg />
+        </button>
+      </NuxtLink>
     </section>
   </div>
 </template>
@@ -76,12 +82,33 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
   padding-block: var(--padding-bottom-home-block);
 }
 
+.title {
+  will-change: opacity, transform;
+  opacity: 0;
+  animation: animationTitle 0.3s ease 0.1s 1 normal forwards;
+}
+
+@keyframes animationTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+}
 
 .subTitle {
   color: #757575;
   line-height: 2.4rem;
   max-width: 770px;
   font-weight: 300;
+  will-change: opacity, transform;
+  opacity: 0;
+  animation: animationOpacity 0.3s ease 0.1s 1 normal forwards;
 
   @media (max-width: 500px) {
     font-size: 20px;
@@ -89,15 +116,6 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
   }
 }
 
-.buttonScroll {
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: none;
-  color: #757575;
-  z-index: 0;
-}
 
 .contacts {
   position: absolute;
@@ -117,5 +135,55 @@ import EmailSvg from '../components/svg/EmailSvg.vue';
   flex-direction: column;
   row-gap: 12px;
 
+  & li {
+    will-change: opacity, transform;
+    opacity: 0;
+    animation: animationOpacity 0.1s linear 0s 1 normal forwards;
+  }
+}
+
+@keyframes animationOpacity {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.buttonScroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  color: #757575;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  opacity: 0;
+  animation: animationButtonScroll 0.5s ease 0.4s 1 normal forwards;
+
+  & svg {
+    transform: rotate(-90deg) translateX(-5px);
+  }
+}
+
+@keyframes animationButtonScroll {
+  0% {
+    left: 0%;
+    transform: rotate(-800deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+    left: 50%;
+  }
 }
 </style>

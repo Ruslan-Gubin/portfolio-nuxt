@@ -13,7 +13,7 @@ import Footer from "../components/Footer";
   </main>
 </template>
 
-<style scoped>
+<style lang="css" scoped>
 .wrapper {
   min-height: 100vh;
   display: flex;

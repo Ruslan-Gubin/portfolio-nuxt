@@ -1,5 +1,17 @@
+<script setup lang="ts">
+import BackHeaderSvg from './svg/BackHeaderSvg'
+
+const scrollTop = () => {
+  window.scrollTo(0, 0);
+}
+
+</script>
+
 <template>
   <footer class='footer'>
+    <button @click="scrollTop" class='buttonScroll'>
+      <BackHeaderSvg />
+    </button>
     <nav>
       <ul class='ulList'>
         <li>
@@ -39,6 +51,23 @@
   justify-content: center;
   flex-direction: column;
   row-gap: var(--padding-main);
+  position: relative;
+}
+
+.buttonScroll {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  background-color: #1D1B25;
+  width: 120px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  transform: translateX(-50%);
+
+  & svg {
+    transform: rotate(90deg) translateX(-5px);
+  }
 }
 
 .ulList {

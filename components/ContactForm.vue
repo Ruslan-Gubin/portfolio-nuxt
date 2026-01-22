@@ -53,7 +53,10 @@ const onSubmit = (e) => {
     {{ alert.text }}
   </Alert>
   <aside class='aside'>
-    <h1 class='titleForm'>Напишите письмо</h1>
+    <header class='header'>
+      <h1 class='titleForm'>Почта</h1>
+      <h2 class='subtitle'>Отправьте электронное письмо.</h2>
+    </header>
     <form class='asideForm' @submit.prevent='onSubmit'>
       <label class='label'>
         Имя
@@ -86,11 +89,29 @@ const onSubmit = (e) => {
   }
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .titleForm {
-  font-weight: 300;
+  font-size: 32px;
 
   @media (max-width: 1024px) {
     font-size: 36px;
+  }
+}
+
+.subtitle {
+  color: #757575;
+  max-width: 80%;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+
+  @media (max-width: 500px) {
+    max-width: 100%;
   }
 }
 

@@ -12,8 +12,10 @@ import EmailSvg from '../components/svg/EmailSvg';
     <div class='target' id='target-contact'></div>
     <section class='wrapper'>
       <aside class='aside'>
-        <h1 class='title'>Контакты</h1>
-        <h2 class='subtitle'>Свяжитесь со мной через социальные сети или отправьте электронное письмо.</h2>
+        <header class='header'>
+          <h1 class='title'>Контакты</h1>
+          <h2 class='subtitle'>Свяжитесь со мной через социальные сети.</h2>
+        </header>
         <ul class='contactList'>
           <li class='contactItem'>
             <NuxtLink class='linkText' to="https://t.me/RuslanGubin" target='_blank'>
@@ -85,8 +87,8 @@ import EmailSvg from '../components/svg/EmailSvg';
   width: 50%;
   display: flex;
   flex-direction: column;
-  row-gap: var(--padding-content-block);
   max-height: max-content;
+  row-gap: var(--padding-content-block);
 
   @media (max-width: 1024px) {
     width: 100%;
@@ -127,13 +129,23 @@ import EmailSvg from '../components/svg/EmailSvg';
   justify-content: center;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .title {
   font-weight: 600;
+  font-size: 32px;
 }
 
 .subtitle {
   color: #757575;
   max-width: 80%;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
 
   @media (max-width: 500px) {
     max-width: 100%;
