@@ -153,6 +153,7 @@ const endAnimation = () => {
   position: absolute;
   will-change: opacity, transform;
   max-height: 100%;
+  height: 100%;
 }
 
 .prevAnimation {
