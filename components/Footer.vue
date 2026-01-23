@@ -56,14 +56,14 @@ const scrollTop = () => {
 
 .buttonScroll {
   position: absolute;
-  top: -28px;
+  top: 10px;
   left: 50%;
-  background-color: #1D1B25;
-  width: 120px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: none;
   transform: translateX(-50%);
+  background-color: var(--background-footer);
 
   & svg {
     transform: rotate(90deg) translateX(-5px);

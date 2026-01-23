@@ -66,8 +66,8 @@ import BackHeaderSvg from './svg/BackHeaderSvg'
 .wrapper {
   position: relative;
   padding-inline: var(--padding-main);
-  border-bottom: 1px solid #eef0f6;
-
+  border-bottom: 1px solid var(--info-block-border-bottom-light);
+  background-color: var(--info-block-bg-light);
 }
 
 .about {
@@ -102,13 +102,13 @@ import BackHeaderSvg from './svg/BackHeaderSvg'
 }
 
 .subTitle {
-  color: #757575;
   line-height: 2.4rem;
   max-width: 770px;
   font-weight: 300;
   will-change: opacity, transform;
   opacity: 0;
   animation: animationOpacity 0.3s ease 0.1s 1 normal forwards;
+  color: var(--sub-title-color);
 
   @media (max-width: 500px) {
     font-size: 20px;
@@ -125,7 +125,6 @@ import BackHeaderSvg from './svg/BackHeaderSvg'
 
   @media (max-width: 880px) {
     display: none;
-
   }
 
 }
@@ -139,6 +138,21 @@ import BackHeaderSvg from './svg/BackHeaderSvg'
     will-change: opacity, transform;
     opacity: 0;
     animation: animationOpacity 0.1s linear 0s 1 normal forwards;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: var(--button-box-shadow-light);
+    overflow: hidden;
+  }
+
+  & svg {
+    scale: 1.2;
+  }
+
+  & svg,
+  path {
+    fill: var(--svg-link-fill);
   }
 }
 
@@ -164,13 +178,22 @@ import BackHeaderSvg from './svg/BackHeaderSvg'
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: black;
   color: white;
   opacity: 0;
   animation: animationButtonScroll 0.5s ease 0.4s 1 normal forwards;
+  box-shadow: var(--button-box-shadow-light);
+  background-color: var(--main-button-color);
+
+  &:active {
+    box-shadow: var(--button-box-shadow-light-active);
+  }
 
   & svg {
     transform: rotate(-90deg) translateX(-5px);
+  }
+
+  @media (max-width: 880px) {
+    display: none;
   }
 }
 

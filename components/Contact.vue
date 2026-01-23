@@ -53,8 +53,9 @@ import EmailSvg from '../components/svg/EmailSvg';
 <style lang="css" scoped>
 .root {
   padding-inline: var(--padding-main);
-  background-color: #fafafc;
   padding-block: var(--padding-bottom-home-block);
+  background-color: var(--info-block-bg-dark);
+  border-bottom: 1px solid var(--info-block-border-bottom-light);
 }
 
 .target {
@@ -102,6 +103,8 @@ import EmailSvg from '../components/svg/EmailSvg';
   grid-template-columns: 220px 220px;
   row-gap: var(--padding-content-block);
 
+
+
   @media (max-width: 1024px) {
     grid-template-columns: 200px 200px;
   }
@@ -117,6 +120,17 @@ import EmailSvg from '../components/svg/EmailSvg';
 
 .contactItem {
   justify-self: flex-start;
+  overflow: hidden;
+
+  & svg {
+    overflow: hidden;
+    border: none;
+  }
+
+  & svg,
+  path {
+    fill: var(--svg-link-fill);
+  }
 }
 
 
@@ -141,11 +155,11 @@ import EmailSvg from '../components/svg/EmailSvg';
 }
 
 .subtitle {
-  color: #757575;
   max-width: 80%;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
+  color: var(--sub-title-color);
 
   @media (max-width: 500px) {
     max-width: 100%;

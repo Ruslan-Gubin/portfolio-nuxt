@@ -79,7 +79,8 @@
 .root {
   padding-block: var(--padding-bottom-home-block);
   padding-inline: var(--padding-main);
-  border-bottom: 1px solid #eef0f6;
+  border-bottom: 1px solid var(--info-block-border-bottom-light);
+  background-color: var(--info-block-bg-light);
 }
 
 .wrapper {
@@ -128,6 +129,7 @@
   font-size: 18px;
   max-width: 770px;
   line-height: 28px;
+  color: var(--sub-title-color);
 
   @media (max-width: 500px) {
     font-size: 20px;
@@ -138,7 +140,7 @@
 .technologiesItem {
   padding-block: 28px;
   padding-block: 16px;
-  border-bottom: 1px solid #eef0f6;
+  border-bottom: 1px solid var(--info-block-border-bottom-light);
   display: grid;
   grid-template-columns: 1fr 3fr;
 
@@ -155,7 +157,7 @@
   }
 
   &:first-child {
-    border-top: 1px solid #eef0f6;
+    border-top: 1px solid var(--info-block-border-bottom-light);
   }
 
   @media (max-width: 880px) {

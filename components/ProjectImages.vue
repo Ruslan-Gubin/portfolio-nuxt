@@ -247,6 +247,8 @@ const endAnimation = () => {
 }
 
 .buttons {
+  position: relative;
+  top: -5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,33 +259,44 @@ const endAnimation = () => {
   width: 40px;
   height: 40px;
   border-radius: 30px;
-  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 18px;
-  box-shadow: 0px 0px 8px 0px #d9d9d9;
+  box-shadow: var(--button-box-shadow-light);
   cursor: default;
+  background-color: var(--main-button-color);
+
+  @media (max-width: 500px) {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
 }
 
 .prevButton {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: black;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0px 8px 0px #d9d9d9;
+  box-shadow: var(--button-box-shadow-light);
+  background-color: var(--main-button-color);
 
   &:active {
-    box-shadow: 0px 0px 6px 0px #d9d9d9;
+    box-shadow: var(--button-box-shadow-light-active);
   }
 
   & svg {
     transform: translateX(-3px);
+  }
+
+  @media (max-width: 500px) {
+    width: 30px;
+    height: 30px;
   }
 }
 

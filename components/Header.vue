@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import BurgerSvg from './svg/BurgerSvg'
 import BackHeaderSvg from './svg/BackHeaderSvg'
+import DaySvg from './svg/DaySvg'
 
 const route = useRoute();
 const isShowBack = ref(route.path !== '/');
@@ -18,16 +19,27 @@ const handleClickBurger = () => {
 
 const handleClickMenuItem = () => {
   isOpen.value = false;
-}
+};
+
+const handleChangeTheme = () => {
+  if (typeof window !== "undefined") {
+    window.document.body.classList.toggle("dark");
+  }
+};
 
 </script>
 
 <template>
   <header class='header'>
     <div class='content'>
-      <button v-if="isShowBack" @click="$router.back(), handleClickMenuItem" class='backSvg'>
-        <BackHeaderSvg />
-      </button>
+      <div class="buttonContent">
+        <button @click="handleChangeTheme" class='changeTheme'>
+          <DaySvg />
+        </button>
+        <button v-if="isShowBack" @click="$router.back(), handleClickMenuItem" class='backSvg'>
+          <BackHeaderSvg />
+        </button>
+      </div>
       <nav>
         <ul :class="{ menuList: true, menuListOpen: isOpen, menuListClose: !isOpen }">
           <NuxtLink @click='handleClickMenuItem' to="/#target-about">
@@ -54,12 +66,13 @@ const handleClickMenuItem = () => {
 .header {
   display: flex;
   height: var(--header-size-height);
-  background-color: var(--background-footer);
   color: white;
   padding-inline: var(--padding-main);
   position: fixed;
   width: 100%;
   z-index: 2;
+  background-color: var(--background-footer);
+  border-bottom: 1px solid var(--info-block-border-bottom-light);
 }
 
 .content {
@@ -67,9 +80,15 @@ const handleClickMenuItem = () => {
   max-width: var(--content-max-width);
   margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  column-gap: var(--padding-content-block);
 }
 
 .menuList {
@@ -150,11 +169,21 @@ const handleClickMenuItem = () => {
   }
 }
 
+.changeTheme {
+  width: 30px;
+  height: 30px;
+  border: none;
+
+  & svg {
+    fill: white;
+  }
+}
+
 .backSvg {
-  position: absolute;
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
+  /* position: absolute; */
+  /* left: 0px; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
   display: flex;
   align-items: center;
   border: none;

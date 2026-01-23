@@ -51,6 +51,7 @@ const project = projects.find(el => el.name === name);
   padding-bottom: var(--padding-bottom-home-block);
   display: flex;
   column-gap: var(--padding-content-block);
+  background-color: var(--info-block-bg-dark);
 
   @media (max-width: 1160px) {
     flex-direction: column-reverse;
@@ -86,7 +87,7 @@ const project = projects.find(el => el.name === name);
   font-size: 18px;
   max-width: 770px;
   line-height: 28px;
-  color: #333333;
+  color: var(--project-description-color);
 
   @media (max-width: 500px) {
     font-size: 18px;
@@ -113,7 +114,7 @@ const project = projects.find(el => el.name === name);
   font-size: 16px;
   color: black;
   font-weight: 400;
-  color: #333333;
+  color: var(--project-description-color);
 
   &::before {
     content: '-';
@@ -122,7 +123,7 @@ const project = projects.find(el => el.name === name);
 
 .linkProject {
   text-decoration: underline;
-  color: green;
+  color: var(--link-color);
 }
 
 .clipList {

@@ -24,5 +24,6 @@ import Footer from "../components/Footer";
 .content {
   flex: 1 1 auto;
   padding-top: var(--header-size-height);
+  background-color: var(--background-content);
 }
 </style>

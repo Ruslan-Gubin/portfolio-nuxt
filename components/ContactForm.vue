@@ -104,11 +104,11 @@ const onSubmit = (e) => {
 }
 
 .subtitle {
-  color: #757575;
   max-width: 80%;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
+  color: var(--sub-title-color);
 
   @media (max-width: 500px) {
     max-width: 100%;
@@ -142,6 +142,7 @@ const onSubmit = (e) => {
 
   &:focus {
     border-color: #015fcc;
+    box-shadow: 0px 0px 6px 0px #d9d9d9;
   }
 }
 
@@ -155,11 +156,12 @@ const onSubmit = (e) => {
 
   &:focus {
     border-color: #015fcc;
+    box-shadow: 0px 0px 6px 0px #d9d9d9;
   }
 }
 
 .button {
-  background-color: black;
+  background-color: var(--main-button-color);
   padding-inline: 27px;
   height: 47px;
   color: white;
@@ -167,6 +169,12 @@ const onSubmit = (e) => {
   font-weight: 600;
   border-radius: 8px;
   max-width: max-content;
+  border: none;
+  box-shadow: var(--button-box-shadow-light);
+
+  &:active {
+    box-shadow: var(--button-box-shadow-light-active);
+  }
 
   &:disabled {
     opacity: 0.5;

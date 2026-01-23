@@ -45,11 +45,11 @@ import projects from '../data/projects.json';
 
 <style lang="css" scoped>
 .wrapper {
-  background-color: #fafafc;
+  background-color: var(--info-block-bg-dark);
   position: relative;
   padding-inline: var(--padding-main);
   padding-block: var(--padding-bottom-home-block);
-  border-bottom: 1px solid #eef0f6;
+  border-bottom: 1px solid var(--info-block-border-bottom-light);
 }
 
 .target {
@@ -81,11 +81,11 @@ import projects from '../data/projects.json';
 }
 
 .subtitle {
-  color: #757575;
   font-weight: 400;
   font-size: 18px;
   max-width: 770px;
   line-height: 28px;
+  color: var(--sub-title-color);
 
   @media (max-width: 500px) {
     font-size: 20px;
@@ -112,16 +112,13 @@ import projects from '../data/projects.json';
 .projectItem {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #0011661A;
-  box-shadow: 0px 4px 8px -2px #0000000A;
-  box-shadow: 0px 2px 4px -2px #00000014;
-  background: white;
   transition: box-shadow 0.2s linear;
-  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.2);
   position: relative;
+  box-shadow: var(--project-cart-shadow);
+  background-color: var(--info-block-bg-light);
 
   &:hover {
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--project-cart-shadow-hover);
   }
 }
 
@@ -169,6 +166,7 @@ import projects from '../data/projects.json';
   overflow: hidden;
   text-overflow: ellipsis;
   height: 56px;
+  color: var(--sub-title-color);
 }
 
 .clipList {
