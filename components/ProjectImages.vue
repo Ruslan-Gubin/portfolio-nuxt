@@ -5,6 +5,8 @@ import BackHeaderSvg from './svg/BackHeaderSvg'
 const props = defineProps<{
   maxCount: number,
   projectName: string,
+  prevProject: { title: string, name: string },
+  nextProject: { title: string, name: string },
 }>();
 
 const count = ref(1);
@@ -112,6 +114,12 @@ const endAnimation = () => {
     </section>
 
     <section class="buttons">
+
+      <NuxtLink v-if="props.prevProject" class='linkProject' :to="`/projects/${props.prevProject.name}`">
+        <button class='nextProject'>
+          {{ '<' }} {{ props.prevProject.title }} </button>
+      </NuxtLink>
+
       <button @click="handleChangePrevImg" class="prevButton">
         <BackHeaderSvg />
       </button>
@@ -119,6 +127,13 @@ const endAnimation = () => {
       <button @click="handleChangeNextImg" class="prevButton nextButton">
         <BackHeaderSvg />
       </button>
+
+      <NuxtLink v-if="props.nextProject" class='linkProject linkProjectNext'
+        :to="`/projects/${props.nextProject.name}`">
+        <button class='nextProject'>
+          {{ props.nextProject.title }} {{ '>' }}
+        </button>
+      </NuxtLink>
     </section>
 
   </section>
@@ -136,6 +151,7 @@ const endAnimation = () => {
   row-gap: var(--padding-content-block);
   max-height: max-content;
   overflow: hidden;
+  user-select: none;
 
   @media (max-width: 1160px) {
     position: relative;
@@ -147,13 +163,27 @@ const endAnimation = () => {
   position: relative;
   aspect-ratio: 7/4;
   max-height: max-content;
+  opacity: 0;
+  animation: animationMount 0.3s linear 0s 1 normal forwards;
+
 }
+
 
 .imageMac {
   position: absolute;
   will-change: opacity, transform;
   max-height: 100%;
   height: 100%;
+}
+
+@keyframes animationMount {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .prevAnimation {
@@ -263,7 +293,7 @@ const endAnimation = () => {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 18px;
+  font-size: 12px;
   box-shadow: var(--button-box-shadow-light);
   cursor: default;
   background-color: var(--main-button-color);
@@ -272,6 +302,7 @@ const endAnimation = () => {
     width: 30px;
     height: 30px;
     font-size: 14px;
+    font-size: 9px;
   }
 }
 
@@ -285,6 +316,7 @@ const endAnimation = () => {
   justify-content: center;
   box-shadow: var(--button-box-shadow-light);
   background-color: var(--main-button-color);
+  z-index: 2;
 
   &:active {
     box-shadow: var(--button-box-shadow-light-active);
@@ -302,5 +334,38 @@ const endAnimation = () => {
 
 .nextButton {
   transform: rotate(180deg);
+}
+
+.nextProject {
+  border: none;
+  color: var(--link-color);
+}
+
+.linkProject {
+  position: absolute;
+  min-width: 150px;
+  left: 0;
+
+  @media (max-width: 880px) {
+    font-size: 14px;
+    min-width: 130px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+    min-width: 70px;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  @media (max-width: 350px) {
+    display: none;
+  }
+}
+
+.linkProjectNext {
+  text-align: end;
+  right: 0;
 }
 </style>

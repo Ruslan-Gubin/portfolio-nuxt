@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref } from 'vue';
 import ProjectImages from '../../components/ProjectImages';
 import Clip from '../../components/Clip';
 import projects from '../../data/projects.json';
@@ -10,7 +10,25 @@ definePageMeta({
 
 const route = useRoute();
 const name = route.params.name;
-const project = projects.find(el => el.name === name);
+
+const currentProjectIndex = projects.findIndex(el => el.name === name);
+const totalProjects = projects.length;
+
+
+const prevProjectIndex = currentProjectIndex === 0 ? totalProjects - 1 : currentProjectIndex - 1;
+const nextProjectIndex = currentProjectIndex + 1 === totalProjects ? 0 : currentProjectIndex + 1;
+
+const project = projects[currentProjectIndex];
+
+const prevProject = {
+  name: projects[prevProjectIndex].name,
+  title: projects[prevProjectIndex].title,
+};
+
+const nextProject = {
+  name: projects[nextProjectIndex].name,
+  title: projects[nextProjectIndex].title,
+};
 
 </script>
 
@@ -40,7 +58,8 @@ const project = projects.find(el => el.name === name);
       </NuxtLink>
     </section>
 
-    <ProjectImages v-if="project.total_image" :maxCount="project.total_image" :projectName="project.name" />
+    <ProjectImages :nextProject="nextProject" :prevProject="prevProject" v-if="project.total_image"
+      :maxCount="project.total_image" :projectName="project.name" />
   </section>
 </template>
 
