@@ -115,7 +115,7 @@ const endAnimation = () => {
 
     <section class="buttons">
 
-      <NuxtLink v-if="props.prevProject" class='linkProject' :to="`/projects/${props.prevProject.name}`">
+      <NuxtLink v-if="props.prevProject" class='linkProject left' :to="`/projects/${props.prevProject.name}`">
         <button class='nextProject'>
           {{ '<' }} {{ props.prevProject.title }} </button>
       </NuxtLink>
@@ -344,7 +344,7 @@ const endAnimation = () => {
 .linkProject {
   position: absolute;
   min-width: 150px;
-  left: 0;
+  max-width: min-content;
 
   @media (max-width: 880px) {
     font-size: 14px;
@@ -362,6 +362,10 @@ const endAnimation = () => {
   @media (max-width: 350px) {
     display: none;
   }
+}
+
+.left {
+  left: 0;
 }
 
 .linkProjectNext {
