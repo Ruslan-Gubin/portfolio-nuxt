@@ -2,6 +2,26 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import BackHeaderSvg from './svg/BackHeaderSvg'
 
+// useHead({
+//   link: [
+//     {
+//       rel: "preload",
+//       as: "img",
+//       href: "/image/kaspersky/1a.webp"
+//     },
+//     {
+//       rel: "preload",
+//       as: "img",
+//       href: "/image/kaspersky/1b.webp"
+//     },
+//     {
+//       rel: "preload",
+//       as: "img",
+//       href: "/image/kaspersky/1c.webp"
+//     },
+//   ]
+// })
+//
 const props = defineProps<{
   maxCount: number,
   projectName: string,
@@ -92,6 +112,13 @@ const endAnimation = () => {
 };
 
 const quality = "80";
+const nextCount = 2;
+
+const skeletonMacSrc = "/image/skeleton_mac.webp"
+const skeletonTableSrc = "/image/skeleton_table.webp"
+const skeletonMobileSrc = "/image/skeleton_mobile.webp"
+
+
 
 </script>
 
@@ -99,19 +126,39 @@ const quality = "80";
   <section class='imagesWrapper'>
 
     <section class="imageList">
-      <nuxt-img loading="lazy" densities="[1, 2, 3]" :quality="quality" format='webp' class="imageMac"
-        :src="`/image/${props.projectName}/${prevCount}c.webp`" alt='project image' />
-      <nuxt-img loading="lazy" densities="[1, 2, 3]" placeholder="blur" @animationend="endAnimation" :quality="quality" format='webp'
+      <!-- <nuxt-img :quality="quality" format='webp' class="imageMac" -->
+      <!--   :src="`/image/${props.projectName}/${nextCount}c.webp`" alt='project image 00' /> -->
+      <!-- <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class="imageMac" -->
+      <!--   :src="`/image/${props.projectName}/${prevCount}c.webp`" alt='project image11' /> -->
+      <!-- <nuxt-img densities="[1, 2, 3]" @animationend="endAnimation" :quality="quality" format='webp' -->
+      <!--   :class="{ imageMac: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }" -->
+      <!--   :src="`/image/${props.projectName}/${count}c.webp`" alt='project image 33' /> -->
+
+      <!-- <img class="imageMac" :src="`/image/${props.projectName}/${nextCount}c.webp`" alt='project image 00' /> -->
+      <img class="imageMac" :src="`/image/${props.projectName}/${prevCount}c.webp`" alt='project image11' />
+      <img @animationend="endAnimation"
         :class="{ imageMac: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }"
-        :src="`/image/${props.projectName}/${count}c.webp`" alt='project image' />
-      <nuxt-img loading="lazy" densities="[1, 2, 3]" :quality="quality" format='webp' class='imageTable'
-        :src="`/image/${props.projectName}/${prevCount}b.webp`" alt='project image' />
-      <nuxt-img loading="lazy" densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
-        :src="`/image/${props.projectName}/${count}b.webp`" alt='project image'
+        :src="`/image/${props.projectName}/${count}c.webp`" alt='project image 33' />
+
+
+      <!-- <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class='imageTable' -->
+      <!--   :src="`/image/${props.projectName}/${prevCount}b.webp`" alt='project image' /> -->
+      <!-- <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' -->
+      <!--   :src="`/image/${props.projectName}/${count}b.webp`" alt='project image' -->
+      <!--   :class="{ imageTable: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }" /> -->
+      <!-- <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class='imageMobile' -->
+      <!--   :src="`/image/${props.projectName}/${prevCount}a.webp`" alt='project image' /> -->
+      <!-- <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' -->
+      <!--   :class="{ imageMobile: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }" -->
+      <!--   :src="`/image/${props.projectName}/${count}a.webp`" alt='project image' /> -->
+
+
+
+      <img class='imageTable' :src="`/image/${props.projectName}/${prevCount}b.webp`" alt='project image' />
+      <img :src="`/image/${props.projectName}/${count}b.webp`" alt='project image'
         :class="{ imageTable: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }" />
-      <nuxt-img loading="lazy" densities="[1, 2, 3]" :quality="quality" format='webp' class='imageMobile'
-        :src="`/image/${props.projectName}/${prevCount}a.webp`" alt='project image' />
-      <nuxt-img loading="lazy" densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
+      <img class='imageMobile' :src="`/image/${props.projectName}/${prevCount}a.webp`" alt='project image' />
+      <img
         :class="{ imageMobile: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }"
         :src="`/image/${props.projectName}/${count}a.webp`" alt='project image' />
     </section>
@@ -166,8 +213,8 @@ const quality = "80";
   position: relative;
   aspect-ratio: 7/4;
   max-height: max-content;
-  opacity: 0;
-  animation: animationMount 0.3s linear 0s 1 normal forwards;
+  /* opacity: 0; */
+  /* animation: animationMount 0.3s linear 0s 1 normal forwards; */
 
 }
 
