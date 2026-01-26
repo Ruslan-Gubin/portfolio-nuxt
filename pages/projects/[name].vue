@@ -30,6 +30,8 @@ const nextProject = {
   title: projects[nextProjectIndex].title,
 };
 
+const images = [];
+
 </script>
 
 <template>

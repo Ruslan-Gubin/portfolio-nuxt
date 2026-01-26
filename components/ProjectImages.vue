@@ -91,24 +91,27 @@ const endAnimation = () => {
   animationClass.value = '';
 };
 
+const quality = "80";
+
 </script>
 
 <template>
   <section class='imagesWrapper'>
 
     <section class="imageList">
-      <nuxt-img quality='80' format='webp' class="imageMac" :src="`/image/${props.projectName}/${prevCount}c.webp`"
-        alt='project image' />
-      <nuxt-img @animationend="endAnimation" quality='80' format='webp'
+      <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class="imageMac"
+        :src="`/image/${props.projectName}/${prevCount}c.webp`" alt='project image' />
+      <nuxt-img densities="[1, 2, 3]" placeholder="blur" @animationend="endAnimation" :quality="quality" format='webp'
         :class="{ imageMac: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }"
         :src="`/image/${props.projectName}/${count}c.webp`" alt='project image' />
-      <nuxt-img quality='80' format='webp' class='imageTable' :src="`/image/${props.projectName}/${prevCount}b.webp`"
-        alt='project image' />
-      <nuxt-img quality='80' format='webp' :src="`/image/${props.projectName}/${count}b.webp`" alt='project image'
+      <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class='imageTable'
+        :src="`/image/${props.projectName}/${prevCount}b.webp`" alt='project image' />
+      <nuxt-img densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
+        :src="`/image/${props.projectName}/${count}b.webp`" alt='project image'
         :class="{ imageTable: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }" />
-      <nuxt-img quality='80' format='webp' class='imageMobile' :src="`/image/${props.projectName}/${prevCount}a.webp`"
-        alt='project image' />
-      <nuxt-img quality='80' format='webp'
+      <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class='imageMobile'
+        :src="`/image/${props.projectName}/${prevCount}a.webp`" alt='project image' />
+      <nuxt-img densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
         :class="{ imageMobile: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }"
         :src="`/image/${props.projectName}/${count}a.webp`" alt='project image' />
     </section>
