@@ -4,32 +4,15 @@ import ProjectImages from '../../components/ProjectImages';
 import Clip from '../../components/Clip';
 import projects from '../../data/projects.json';
 
-definePageMeta({
-  layout: 'default',
-})
+// definePageMeta({
+//   layout: 'default',
+// })
+
 
 const route = useRoute();
 const name = route.params.name;
 
-useHead({
-  link: [
-    {
-      rel: "preload",
-      as: "image",
-      href: `/image/${name}/1a.webp`
-    },
-    {
-      rel: "preload",
-      as: "image",
-      href: `/image/${name}/1b.webp`
-    },
-    {
-      rel: "preload",
-      as: "image",
-      href: `/image/${name}/1c.webp`
-    },
-  ]
-});
+
 
 const currentProjectIndex = projects.findIndex(el => el.name === name);
 const totalProjects = projects.length;
@@ -50,7 +33,34 @@ const nextProject = {
   title: projects[nextProjectIndex].title,
 };
 
-const images = [];
+
+useHead({
+  title: project ? project.title : 'Проект',
+  meta: [
+    {
+      name: 'description',
+      content: project ? project.full_description : 'Описание проекта',
+    }
+  ],
+  link: [
+    {
+      rel: "preload",
+      as: "image",
+      href: `/image/${name}/1a.webp`
+    },
+    {
+      rel: "preload",
+      as: "image",
+      href: `/image/${name}/1b.webp`
+    },
+    {
+      rel: "preload",
+      as: "image",
+      href: `/image/${name}/1c.webp`
+    },
+  ]
+});
+
 
 </script>
 
