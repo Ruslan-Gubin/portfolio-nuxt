@@ -11,6 +11,26 @@ definePageMeta({
 const route = useRoute();
 const name = route.params.name;
 
+useHead({
+  link: [
+    {
+      rel: "preload",
+      as: "image",
+      href: `/image/${name}/1a.webp`
+    },
+    {
+      rel: "preload",
+      as: "image",
+      href: `/image/${name}/1b.webp`
+    },
+    {
+      rel: "preload",
+      as: "image",
+      href: `/image/${name}/1c.webp`
+    },
+  ]
+});
+
 const currentProjectIndex = projects.findIndex(el => el.name === name);
 const totalProjects = projects.length;
 
