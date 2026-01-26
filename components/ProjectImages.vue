@@ -2,26 +2,26 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import BackHeaderSvg from './svg/BackHeaderSvg'
 
-// useHead({
-//   link: [
-//     {
-//       rel: "preload",
-//       as: "img",
-//       href: "/image/kaspersky/1a.webp"
-//     },
-//     {
-//       rel: "preload",
-//       as: "img",
-//       href: "/image/kaspersky/1b.webp"
-//     },
-//     {
-//       rel: "preload",
-//       as: "img",
-//       href: "/image/kaspersky/1c.webp"
-//     },
-//   ]
-// })
-//
+useHead({
+  link: [
+    {
+      rel: "preload",
+      as: "img",
+      href: "/image/kaspersky/1a.webp"
+    },
+    {
+      rel: "preload",
+      as: "img",
+      href: "/image/kaspersky/1b.webp"
+    },
+    {
+      rel: "preload",
+      as: "img",
+      href: "/image/kaspersky/1c.webp"
+    },
+  ]
+})
+
 const props = defineProps<{
   maxCount: number,
   projectName: string,
