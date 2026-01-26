@@ -2,32 +2,32 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import BackHeaderSvg from './svg/BackHeaderSvg'
 
-useHead({
-  link: [
-    {
-      rel: "preload",
-      as: "img",
-      href: "/image/kaspersky/1a.webp"
-    },
-    {
-      rel: "preload",
-      as: "img",
-      href: "/image/kaspersky/1b.webp"
-    },
-    {
-      rel: "preload",
-      as: "img",
-      href: "/image/kaspersky/1c.webp"
-    },
-  ]
-})
-
 const props = defineProps<{
   maxCount: number,
   projectName: string,
   prevProject: { title: string, name: string },
   nextProject: { title: string, name: string },
 }>();
+
+useHead({
+  link: [
+    {
+      rel: "preload",
+      as: "img",
+      href: `/image/${props.projectName}/1a.webp`
+    },
+    {
+      rel: "preload",
+      as: "img",
+      href: `/image/${props.projectName}/1b.webp`
+    },
+    {
+      rel: "preload",
+      as: "img",
+      href: `/image/${props.projectName}/1c.webp`
+    },
+  ]
+});
 
 const count = ref(1);
 const prevCount = ref(1);
