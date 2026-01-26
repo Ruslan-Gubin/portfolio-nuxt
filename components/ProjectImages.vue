@@ -316,7 +316,6 @@ const endAnimation = () => {
   justify-content: center;
   box-shadow: var(--button-box-shadow-light);
   background-color: var(--main-button-color);
-  z-index: 2;
 
   &:active {
     box-shadow: var(--button-box-shadow-light-active);

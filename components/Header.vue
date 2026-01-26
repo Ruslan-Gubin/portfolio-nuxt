@@ -96,6 +96,7 @@ const handleChangeTheme = () => {
   column-gap: var(--padding-content-block);
   font-size: 18px;
   font-weight: 500;
+  z-index: 2;
 
   @media (max-width: 880px) {
     position: fixed;
@@ -110,6 +111,7 @@ const handleChangeTheme = () => {
 }
 
 .menuListOpen {
+
   @media (max-width: 880px) {
     animation: animationOpen 0.2s linear 0s 1 normal forwards;
   }
