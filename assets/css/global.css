@@ -29,6 +29,39 @@
   color-scheme: light;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+  --background-content-color: #ffffff;
+  --background-side-navigate: #f8f8f8;
+  --text-color-main: #333333;
+  --padding-content-block: 24px;
+  --padding-main: 32px;
+  --padding-bottom-home-block: 96px;
+  --header-size-height: 80px;
+  --font-size-h1: 58px;
+  --font-size-h2: 24px;
+  --font-size-h3: 20px;
+  --content-max-width: 1200px;
+  --info-block-bg-light: #ffffff;
+  --info-block-bg-dark: #fafafc;
+  --info-block-border-bottom-light: #eef0f6;
+  --sub-title-color: #757575;
+  --project-description-color: #333333;
+  --svg-link-fill: #323232;
+  --project-cart-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.2);
+  --project-cart-shadow-hover: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  --clip-color: #000626E5;
+  --clip-border-color: #0011661A;
+  --background-footer: #1b1d25;
+  --background-content: #fafafc;
+  --button-box-shadow-light: 0px 0px 8px 0px #d9d9d9;
+  --button-box-shadow-light-active: 0px 0px 6px 0px #d9d9d9;
+  --link-color: #5d69ac;
+  --main-button-color: #323232;
+    color-scheme: dark;
+  }
+}
+
 .dark {
   --background-side-navigate: grey;
   --background-content-color: #0a0a0a;
@@ -50,14 +83,7 @@
   color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color-main: #ededed;
-    --background-side-navigate: grey;
-    --background-content-color: #0a0a0a;
-    color-scheme: dark;
-  }
-}
+
 
 @media (max-width: 880px) {
   :root {
