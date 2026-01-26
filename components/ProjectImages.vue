@@ -161,9 +161,8 @@ const endAnimation = () => {
   position: relative;
   aspect-ratio: 7/4;
   max-height: max-content;
-  /* opacity: 0; */
-  /* animation: animationMount 0.3s linear 0s 1 normal forwards; */
-
+  opacity: 0;
+  animation: animationMount 0.3s linear 0s 1 normal forwards;
 }
 
 
