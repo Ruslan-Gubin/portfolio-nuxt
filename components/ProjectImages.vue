@@ -99,19 +99,19 @@ const quality = "80";
   <section class='imagesWrapper'>
 
     <section class="imageList">
-      <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class="imageMac"
+      <nuxt-img loading="lazy" densities="[1, 2, 3]" :quality="quality" format='webp' class="imageMac"
         :src="`/image/${props.projectName}/${prevCount}c.webp`" alt='project image' />
-      <nuxt-img densities="[1, 2, 3]" placeholder="blur" @animationend="endAnimation" :quality="quality" format='webp'
+      <nuxt-img loading="lazy" densities="[1, 2, 3]" placeholder="blur" @animationend="endAnimation" :quality="quality" format='webp'
         :class="{ imageMac: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }"
         :src="`/image/${props.projectName}/${count}c.webp`" alt='project image' />
-      <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class='imageTable'
+      <nuxt-img loading="lazy" densities="[1, 2, 3]" :quality="quality" format='webp' class='imageTable'
         :src="`/image/${props.projectName}/${prevCount}b.webp`" alt='project image' />
-      <nuxt-img densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
+      <nuxt-img loading="lazy" densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
         :src="`/image/${props.projectName}/${count}b.webp`" alt='project image'
         :class="{ imageTable: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }" />
-      <nuxt-img densities="[1, 2, 3]" :quality="quality" format='webp' class='imageMobile'
+      <nuxt-img loading="lazy" densities="[1, 2, 3]" :quality="quality" format='webp' class='imageMobile'
         :src="`/image/${props.projectName}/${prevCount}a.webp`" alt='project image' />
-      <nuxt-img densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
+      <nuxt-img loading="lazy" densities="[1, 2, 3]" placeholder="blur" :quality="quality" format='webp'
         :class="{ imageMobile: true, nextAnimation: animationClass === 'next', prevAnimation: animationClass === 'prev' }"
         :src="`/image/${props.projectName}/${count}a.webp`" alt='project image' />
     </section>
